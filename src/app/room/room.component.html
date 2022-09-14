@@ -1,0 +1,28 @@
+<p>room works!</p>
+
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Standard</th>
+        <th scope="col">Liczba osób</th>
+        <th scope="col">Nr pokoju</th>
+        <th scope="col">Piętro</th>
+        <th scope="col">Cena</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let room of rooms">
+        <td>{{ room.id }}</td>
+        <td>{{ room.standard }}</td>
+        <td>{{ room.numberOfPeople }}</td>
+        <td>{{ room.roomNumber }}</td>
+        <td>{{ room.floor }}</td>
+        <td>{{ room.price }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
