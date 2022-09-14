@@ -7,11 +7,13 @@ import { RoomComponent } from './room/room.component';
 import {RoomServiceService} from "./room/room-service.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { ReservationComponent } from './reservation/reservation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RoomComponent
+    RoomComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,
