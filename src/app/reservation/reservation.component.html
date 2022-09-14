@@ -1,3 +1,4 @@
+
 <div class="card my-5">
   <div class="card-body">
     <table class="table table-bordered table-striped">
@@ -16,17 +17,17 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let room of reservations">
-        <td>{{ room.id }}</td>
-        <td>{{ room.startVisit }}</td>
-        <td>{{ room.endVisit }}</td>
-        <td>{{ room.numberOfGuests }}</td>
-        <td>{{ room.breakfast }}</td>
-        <td>{{ room.parking }}</td>
-        <td>{{ room.animal }}</td>
-        <td>{{ room.spa }}</td>
-        <td>{{ room.roomId }}</td>
-        <td>{{ room.userId }}</td>
+      <tr *ngFor="let reservation of reservations">
+        <td>{{ reservation.id }}</td>
+        <td>{{ reservation.startVisit }}</td>
+        <td>{{ reservation.endVisit }}</td>
+        <td>{{ reservation.numberOfGuests }}</td>
+        <td>{{ reservation.breakfast }}</td>
+        <td>{{ reservation.parking }}</td>
+        <td>{{ reservation.animal }}</td>
+        <td>{{ reservation.spa }}</td>
+        <td>{{ reservation.roomId }}</td>
+        <td>{{ reservation.userId }}</td>
       </tr>
       </tbody>
     </table>
