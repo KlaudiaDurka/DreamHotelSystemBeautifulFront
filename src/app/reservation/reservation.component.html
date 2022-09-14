@@ -1,0 +1,34 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Początek pobytu</th>
+        <th scope="col">Koniec pobytu</th>
+        <th scope="col">Liczba osób</th>
+        <th scope="col">Śniadanie</th>
+        <th scope="col">Parking</th>
+        <th scope="col">Zwierze</th>
+        <th scope="col">Spa</th>
+        <th scope="col">#pokoju</th>
+        <th scope="col">#gościa</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let room of reservations">
+        <td>{{ room.id }}</td>
+        <td>{{ room.startVisit }}</td>
+        <td>{{ room.endVisit }}</td>
+        <td>{{ room.numberOfGuests }}</td>
+        <td>{{ room.breakfast }}</td>
+        <td>{{ room.parking }}</td>
+        <td>{{ room.animal }}</td>
+        <td>{{ room.spa }}</td>
+        <td>{{ room.roomId }}</td>
+        <td>{{ room.userId }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
