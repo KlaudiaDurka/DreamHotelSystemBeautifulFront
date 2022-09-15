@@ -1,0 +1,143 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #reservationForm="ngForm">
+      <div class="form-group">
+        <label for="startVisit">Początek pobytu</label>
+        <input type="date" [(ngModel)]="reservations.startVisit"
+               class="form-control"
+               id="startVisit"
+               name="startVisit"
+               placeholder="Enter date start visit"
+               required #startVisit="ngModel">
+      </div>
+      <div [hidden]="!startVisit.pristine" class="alert alert-danger">startVisit is required</div>
+      <div class="form-group">
+        <label for="endVisit">Koniec pobytu</label>
+        <input type="date" [(ngModel)]="reservations.endVisit"
+               class="form-control"
+               id="endVisit"
+               name="endVisit"
+               placeholder="Enter date end visit"
+               required #endVisit="ngModel">
+        <div [hidden]="!endVisit.pristine" class="alert alert-danger">endVisit is required</div>
+      </div>
+      <div class="form-group">
+        <label for="numberOfGuests">Liczba gości</label>
+        <input list="numberOfGuestsList" [(ngModel)]="reservations.numberOfGuests"
+               class="form-control"
+               id="numberOfGuests"
+               name="numberOfGuests"
+               placeholder="Number of guests"
+               required #numberOfGuests="ngModel">
+        <datalist id="numberOfGuestsList">
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+        </datalist>
+        <div [hidden]="!numberOfGuests.pristine" class="alert alert-danger">numberOfGuests is required</div>
+      </div>
+      <div class="form-group">
+        <label for="breakfast">Śniadanie</label>
+        <input type="checkbox" [(ngModel)]="reservations.breakfast"
+               class="form-control"
+               id="breakfast"
+               name="breakfast"
+               placeholder="Do you want breakfast?">
+      </div>
+      <div class="form-group">
+        <label for="parking">Parking</label>
+        <input type="checkbox" [(ngModel)]="reservations.parking"
+               class="form-control"
+               id="parking"
+               name="parking"
+               placeholder="Do you want parking?">
+      </div>
+      <div class="form-group">
+        <label for="animal">Czy masz zwierza?</label>
+        <input type="checkbox" [(ngModel)]="reservations.animal"
+               class="form-control"
+               id="animal"
+               name="animal"
+               placeholder="Do you have Zwierz?">
+      </div>
+      <div class="form-group">
+        <label for="spa">Spa</label>
+        <input type="checkbox" [(ngModel)]="reservations.spa"
+               class="form-control"
+               id="spa"
+               name="spa"
+               placeholder="Do you want spa?">
+      </div>
+      <div class="form-group">
+        <label for="roomId">Numer pokoju</label>
+        <input list="roomIdList" [(ngModel)]="reservations.roomId"
+               class="form-control"
+               id="roomId"
+               name="roomId"
+               placeholder="Room number"
+               required #roomId="ngModel">
+        <datalist id="roomIdList">
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+          <option value="8"></option>
+          <option value="9"></option>
+          <option value="10"></option>
+          <option value="11"></option>
+          <option value="12"></option>
+          <option value="13"></option>
+          <option value="14"></option>
+          <option value="15"></option>
+          <option value="16"></option>
+          <option value="17"></option>
+          <option value="18"></option>
+          <option value="19"></option>
+          <option value="20"></option>
+        </datalist>
+      </div>
+      <div [hidden]="!roomId.pristine" class="alert alert-danger">roomId is required</div>
+      <div class="form-group">
+        <label for="userId">Numer identyfikacyjny gościa</label>
+        <input list="userIdList" [(ngModel)]="reservations.userId"
+               class="form-control"
+               id="userId"
+               name="userId"
+               placeholder="User number"
+               required #userId="ngModel">
+        <datalist id="userIdList">
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+          <option value="8"></option>
+          <option value="9"></option>
+          <option value="10"></option>
+          <option value="11"></option>
+          <option value="12"></option>
+          <option value="13"></option>
+          <option value="14"></option>
+          <option value="15"></option>
+          <option value="16"></option>
+          <option value="17"></option>
+          <option value="18"></option>
+          <option value="19"></option>
+          <option value="20"></option>
+        </datalist>
+      </div>
+      <div [hidden]="!userId.pristine" class="alert alert-danger">userId is required</div>
+      <button type="submit" [disabled]="!reservationForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
