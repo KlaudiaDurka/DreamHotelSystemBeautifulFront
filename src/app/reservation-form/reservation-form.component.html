@@ -80,27 +80,11 @@
                name="roomId"
                placeholder="Room number"
                required #roomId="ngModel">
-        <datalist id="roomIdList">
+        <datalist  id="roomIdList">
+          <option *ngFor="let room of rooms" value={{room.id}}>
+            Nr pokoju: {{room.roomNumber}} | Standard {{room.standard}} | Piętro {{room.floor}} | Max liczba osób: {{room.numberOfPeople}}</option>
           <option value="1"></option>
-          <option value="2"></option>
-          <option value="3"></option>
-          <option value="4"></option>
-          <option value="5"></option>
-          <option value="6"></option>
-          <option value="7"></option>
-          <option value="8"></option>
-          <option value="9"></option>
-          <option value="10"></option>
-          <option value="11"></option>
-          <option value="12"></option>
-          <option value="13"></option>
-          <option value="14"></option>
-          <option value="15"></option>
-          <option value="16"></option>
-          <option value="17"></option>
-          <option value="18"></option>
-          <option value="19"></option>
-          <option value="20"></option>
+          <option value="1"></option>
         </datalist>
       </div>
       <div [hidden]="!roomId.pristine" class="alert alert-danger">roomId is required</div>
@@ -139,5 +123,33 @@
       <button type="submit" [disabled]="!reservationForm.form.valid"
               class="btn btn-info">Submit</button>
     </form>
+  </div>
+
+
+
+
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Standard</th>
+        <th scope="col">Liczba osób</th>
+        <th scope="col">Nr pokoju</th>
+        <th scope="col">Piętro</th>
+        <th scope="col">Cena</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let room of rooms">
+        <td>{{ room.id }}</td>
+        <td>{{ room.standard }}</td>
+        <td>{{ room.numberOfPeople }}</td>
+        <td>{{ room.roomNumber }}</td>
+        <td>{{ room.floor }}</td>
+        <td>{{ room.price }}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </div>

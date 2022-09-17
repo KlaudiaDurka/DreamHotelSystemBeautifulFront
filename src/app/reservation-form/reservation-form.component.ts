@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ReservationServiceService} from "../reservation/reservation-service.service";
 import {RoomComponent} from "../room/room.component";
 import {Room} from "../room/room";
+import {RoomServiceService} from "../room/room-service.service";
 
 @Component({
   selector: 'app-reservation-form',
@@ -13,12 +14,14 @@ import {Room} from "../room/room";
 export class ReservationFormComponent implements OnInit {
 
   reservations: Reservation;
+  rooms: Room[] = [];
 
-  @Input() rooms!: Room;
+  //@Input() rooms!: Room;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private reservationService: ReservationServiceService) {
+              private reservationService: ReservationServiceService,
+              private roomService: RoomServiceService) {
     // @ts-ignore
     this.reservations = new Reservation();
   }
@@ -26,13 +29,17 @@ export class ReservationFormComponent implements OnInit {
   onSubmit() {
     this.reservationService.save(this.reservations)
       .subscribe(result => this.gotoReservationList());
+
   }
 
   gotoReservationList(){
     this.router.navigate(['/reservations'])
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.roomService.findAll().subscribe(data => {
+      this.rooms = data;
+    });
   }
 
 }
