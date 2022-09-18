@@ -5,6 +5,8 @@ import {ReservationServiceService} from "../reservation/reservation-service.serv
 import {RoomComponent} from "../room/room.component";
 import {Room} from "../room/room";
 import {RoomServiceService} from "../room/room-service.service";
+import {UserHotel} from "../user/userHotel";
+import {UserServiceService} from "../user/user-service.service";
 
 @Component({
   selector: 'app-reservation-form',
@@ -15,13 +17,15 @@ export class ReservationFormComponent implements OnInit {
 
   reservations: Reservation;
   rooms: Room[] = [];
+  usersHotel: UserHotel[] = [];
 
   //@Input() rooms!: Room;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private reservationService: ReservationServiceService,
-              private roomService: RoomServiceService) {
+              private roomService: RoomServiceService,
+              private userService: UserServiceService) {
     // @ts-ignore
     this.reservations = new Reservation();
   }
@@ -39,6 +43,9 @@ export class ReservationFormComponent implements OnInit {
   ngOnInit() {
     this.roomService.findAll().subscribe(data => {
       this.rooms = data;
+    });
+    this.userService.findAll().subscribe(data => {
+      this.usersHotel = data;
     });
   }
 
