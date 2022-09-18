@@ -33,7 +33,7 @@ export class ReservationFormComponent implements OnInit {
   }
 
   gotoReservationList(){
-    this.router.navigate(['/reservations'])
+    this.router.navigate(['/reservation'])
   }
 
   ngOnInit() {

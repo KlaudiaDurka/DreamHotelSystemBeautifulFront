@@ -11,6 +11,7 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { ReservationFormComponent } from './reservation-form/reservation-form.component';
 import { UserListComponent } from './user/user-list.component';
 import {UserServiceService} from "./user/user-service.service";
+import { UserFormComponent } from './user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {UserServiceService} from "./user/user-service.service";
     RoomComponent,
     ReservationComponent,
     ReservationFormComponent,
-    UserListComponent
+    UserListComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,
