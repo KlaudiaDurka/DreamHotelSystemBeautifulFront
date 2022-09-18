@@ -3,6 +3,8 @@ import {Reservation} from "./reservation";
 import {ReservationServiceService} from "./reservation-service.service";
 import {Room} from "../room/room";
 import {RoomServiceService} from "../room/room-service.service";
+import {UserHotel} from "../user/userHotel";
+import {UserServiceService} from "../user/user-service.service";
 
 @Component({
   selector: 'app-reservation',
@@ -13,9 +15,11 @@ export class ReservationComponent implements OnInit {
 
   reservations: Reservation[] = [];
   rooms: Room[] = [];
+  usersHotel: UserHotel[] = [];
 
   constructor(private reservationService: ReservationServiceService,
-              private roomService: RoomServiceService) {
+              private roomService: RoomServiceService,
+              private userService: UserServiceService) {
   }
 
   ngOnInit() {
@@ -24,6 +28,9 @@ export class ReservationComponent implements OnInit {
     })
     this.roomService.findAll().subscribe(data => {
       this.rooms = data;
+    })
+    this.userService.findAll().subscribe(data => {
+      this.usersHotel = data;
     });
   }
 

@@ -15,8 +15,10 @@
         <th scope="col">Parking</th>
         <th scope="col">Zwierze</th>
         <th scope="col">Spa</th>
-        <th scope="col">#pokoju</th>
+        <th scope="col">Nr pokoju</th>
         <th scope="col">#gościa</th>
+        <th scope="col">Imię gościa</th>
+        <th scope="col">Nazwisko gościa</th>
       </tr>
       </thead>
       <tbody>
@@ -29,8 +31,10 @@
         <td>{{ reservation.parking }}</td>
         <td>{{ reservation.animal }}</td>
         <td>{{ reservation.spa }}</td>
-        <td>{{ reservation.room.id }}</td>
-        <td>{{ reservation.userId }}</td>
+        <td>{{ reservation.room.roomNumber }}</td>
+        <td>{{ reservation.userHotel.id }}</td>
+        <td>{{ reservation.userHotel.name }}</td>
+        <td>{{ reservation.userHotel.surname }}</td>
       </tr>
       </tbody>
     </table>

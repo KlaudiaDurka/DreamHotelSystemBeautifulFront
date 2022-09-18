@@ -1,4 +1,5 @@
 import {Room} from "../room/room";
+import {UserHotel} from "../user/userHotel";
 
 export class Reservation {
 
@@ -13,9 +14,10 @@ export class Reservation {
   roomId: number;
   userId: number;
   room: Room;
+  userHotel: UserHotel;
 
 
-  constructor(id: number, startVisit: Date, endVisit: Date, numberOfGuests: number, breakfast: boolean, parking: boolean, animal: boolean, spa: boolean, roomId: number, userId: number, room: Room) {
+  constructor(id: number, startVisit: Date, endVisit: Date, numberOfGuests: number, breakfast: boolean, parking: boolean, animal: boolean, spa: boolean, roomId: number, userId: number, room: Room, userHotel: UserHotel) {
     this.id = id;
     this.startVisit = startVisit;
     this.endVisit = endVisit;
@@ -27,5 +29,6 @@ export class Reservation {
     this.roomId = roomId;
     this.userId = userId;
     this.room = room;
+    this.userHotel = userHotel;
   }
 }
