@@ -73,28 +73,31 @@
                placeholder="Do you want spa?">
       </div>
       <div class="form-group">
+        <div class="w-50 p-3">
         <label for="roomId">Numer pokoju</label>
         <input list="roomIdList" [(ngModel)]="reservations.roomId"
                class="form-control"
                id="roomId"
                name="roomId"
-               placeholder="Room number"
+               placeholder="Podaj numer pokoju"
                required #roomId="ngModel">
         <datalist  id="roomIdList">
           <option *ngFor="let room of rooms" value={{room.id}}>
-            Nr pokoju: {{room.roomNumber}} | Standard {{room.standard}} | Piętro {{room.floor}} | Max liczba osób: {{room.numberOfPeople}}</option>
+            Nr pokoju: {{room.roomNumber}} | Standard: {{room.standard}} | Piętro {{room.floor}} | Max liczba osób: {{room.numberOfPeople}}</option>
           <option value="1"></option>
           <option value="1"></option>
         </datalist>
+          <div [hidden]="!roomId.pristine" class="alert alert-danger">roomId is required</div>
+        </div>
       </div>
-      <div [hidden]="!roomId.pristine" class="alert alert-danger">roomId is required</div>
+
       <div class="form-group">
         <label for="userId">Numer identyfikacyjny gościa</label>
         <input list="userIdList" [(ngModel)]="reservations.userId"
                class="form-control"
                id="userId"
                name="userId"
-               placeholder="User number"
+               placeholder="Wybierz gościa, jeżeli nie ma go na liście skorzystaj z opcji utwórz"
                required #userId="ngModel">
         <datalist id="userIdList">
           <option value="1"></option>
@@ -126,30 +129,4 @@
   </div>
 
 
-
-
-  <div class="card-body">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Standard</th>
-        <th scope="col">Liczba osób</th>
-        <th scope="col">Nr pokoju</th>
-        <th scope="col">Piętro</th>
-        <th scope="col">Cena</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let room of rooms">
-        <td>{{ room.id }}</td>
-        <td>{{ room.standard }}</td>
-        <td>{{ room.numberOfPeople }}</td>
-        <td>{{ room.roomNumber }}</td>
-        <td>{{ room.floor }}</td>
-        <td>{{ room.price }}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
