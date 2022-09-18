@@ -1,0 +1,26 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Imię</th>
+        <th scope="col">Nazwisko</th>
+        <th scope="col">Telefon</th>
+        <th scope="col">Data urodzenia</th>
+        <th scope="col">Dostęp</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let userHotel of usersHotel">
+        <td>{{ userHotel.id }}</td>
+        <td>{{ userHotel.name }}</td>
+        <td>{{ userHotel.surname }}</td>
+        <td>{{ userHotel.telephone }}</td>
+        <td>{{ userHotel.dateOfBirth }}</td>
+        <td>{{ userHotel.access }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
