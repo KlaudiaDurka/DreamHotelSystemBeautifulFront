@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { RoomComponent } from './room/room.component';
 import {RoomServiceService} from "./room/room-service.service";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ReservationComponent } from './reservation/reservation.component';
 import { ReservationFormComponent } from './reservation-form/reservation-form.component';
 import { UserListComponent } from './user/user-list.component';
@@ -26,7 +26,8 @@ import { UserFormComponent } from './user-form/user-form.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [RoomServiceService,
               UserServiceService],
